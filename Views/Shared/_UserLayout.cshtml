@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Account" asp-action="Account">ABC_Bank</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                           
+                        </li>
+                       </ul>
+                        <ul class="nav navbar-nav navbar-right">
+
+                            <li class="nav-item"><a class="nav-link text-dark" href="#contact">@Context.Session.GetString("FullName")</a></li>
+                            <li class="nav-item"><a class="nav-link text-dark" href="@Url.Action("Logout","Customer")">Logout</a></li>
+
+                        </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div class="d-flex flex-row justify-content-center">
+            <div class="p-2"><a class="nav-link text-dark btn btn-outline-secondary" asp-action="Statement" asp-controller="Transaction">Make a Statement</a></div>
+            <div class="p-2"><a class="nav-link text-dark btn btn-outline-secondary" asp-action="Deposit" asp-controller="Transaction">Deposit</a></div>
+            <div class="p-2"><a class="nav-link text-dark btn btn-outline-secondary" asp-action="Withdrawal" asp-controller="Transaction">Withdraw</a></div>
+            <div class="p-2"><a class="nav-link text-dark btn btn-outline-secondary" asp-action="Transactions" asp-controller="Transaction">Transactions</a></div>
+            <div class="p-2"><a class="nav-link text-dark btn btn-outline-secondary" asp-action="Transfer" asp-controller="Transaction">Transfer</a></div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
+

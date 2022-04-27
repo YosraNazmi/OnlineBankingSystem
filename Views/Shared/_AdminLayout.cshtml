@@ -1,0 +1,51 @@
+﻿@using Microsoft.AspNetCore.Http;
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Admin" asp-action="Admin">ABC_Bank</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" asp-controller="Transactions" asp-action="Index">Transaction</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+
+                        <li class="nav-item"><a class="nav-link text-dark" href="#contact">@Context.Session.GetString("FullName")</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark" href="@Url.Action("Logout","Customer")">Logout</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+
+        <div class="d-flex flex-row justify-content-center">
+            <div class="p-2"><a class="nav-link text-dark btn btn-outline-secondary" asp-action="Index" asp-controller="Customer" >Accounts</a></div>
+            <div class="p-2"><a class="nav-link text-dark btn btn-outline-secondary" asp-action="Index" asp-controller="Transaction">Transactions</a></div>
+            
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Http;
+@model IEnumerable<ABC_Bank.Models.Accounts>
+@{
+
+
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+
+}
+
+<div class="container">
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Welcome @Context.Session.GetString("FullName")</h5>
+            <p class="card-text">Account NO:  @Context.Session.GetInt32("AccountID") </p>
+
+            @foreach (var item in Model)
+            {
+                if (item.AccountNumber == Context.Session.GetInt32("AccountID"))
+                {
+        <p> Available Balance : &pound; @Html.DisplayFor(modelItem => item.Balance) </p>
+                }
+
+
+
+
+
+            }
+        </div>
+    </div>
+</div>
+
+

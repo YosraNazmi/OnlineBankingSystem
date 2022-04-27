@@ -1,0 +1,73 @@
+﻿@model IEnumerable<ABC_Bank.Models.Transactions>
+
+
+@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "Tranaction";
+}
+
+@{
+
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+
+}
+
+
+<div class="container">
+    <h3>Transactions</h3>
+
+    <h5 class="card-title"> @Context.Session.GetString("FullName")</h5>
+    <p class="card-text">Account NO:  @Context.Session.GetInt32("AccountID") </p>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Account Number
+                </th>
+                <th>
+                    Transaction Name
+                </th>
+                <th>
+                    Transaction Amount
+                </th>
+                <th>
+                    Transaction Date
+                </th>
+
+                <th>
+                    Destination Account
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+
+            {
+                if (item.AccountNumber == @Context.Session.GetInt32("AccountID"))
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AccountNumber)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TransactionName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TransactionAmount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TransactionDate)
+                        </td>
+
+                        <th>
+                            @Html.DisplayFor(modelItem => item.DestinationAccount)
+                        </th>
+                    </tr>
+                }
+
+
+            }
+        </tbody>
+    </table>
+</div>

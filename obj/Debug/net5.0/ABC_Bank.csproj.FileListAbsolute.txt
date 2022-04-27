@@ -1,0 +1,7 @@
+/Users/yosrabader/Documents/Projects/ABC_Bank/ABC_Bank/obj/Debug/net5.0/ABC_Bank.GeneratedMSBuildEditorConfig.editorconfig
+/Users/yosrabader/Documents/Projects/ABC_Bank/ABC_Bank/obj/Debug/net5.0/ABC_Bank.AssemblyInfoInputs.cache
+/Users/yosrabader/Documents/Projects/ABC_Bank/ABC_Bank/obj/Debug/net5.0/ABC_Bank.AssemblyInfo.cs
+/Users/yosrabader/Documents/Projects/ABC_Bank/ABC_Bank/obj/Debug/net5.0/ABC_Bank.csproj.CoreCompileInputs.cache
+/Users/yosrabader/Documents/Projects/ABC_Bank/ABC_Bank/obj/Debug/net5.0/ABC_Bank.MvcApplicationPartsAssemblyInfo.cache
+/Users/yosrabader/Documents/Projects/ABC_Bank/ABC_Bank/obj/Debug/net5.0/ABC_Bank.RazorAssemblyInfo.cache
+/Users/yosrabader/Documents/Projects/ABC_Bank/ABC_Bank/obj/Debug/net5.0/ABC_Bank.RazorAssemblyInfo.cs

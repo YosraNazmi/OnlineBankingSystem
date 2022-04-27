@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+
+
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<div class="container">
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Welcome @Context.Session.GetString("FullName")</h5>
+
+        </div>
+    </div>
+</div>
